@@ -1,2 +1,2 @@
 # LeetCodeSoln
-# LeetCode Ques with thier solution in JAVA 
+LeetCode Ques with thier solution in JAVA 
