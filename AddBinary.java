@@ -19,10 +19,8 @@ class Solution {
         int x = 0, y = 0;
         String res = "";
         while(i >= 0  || j >= 0){
-            if(i >= 0)  x = a.charAt(i) - '0';
-            if(j >= 0)  y = b.charAt(j) - '0';
-            if(i < 0) x = 0;
-            if(j < 0) y = 0;
+            if(i >= 0)  x = a.charAt(i) - '0'; else x = 0;
+            if(j >= 0)  y = b.charAt(j) - '0'; else y = 0;
             sum = x ^ y ^ carryIn;
             res += sum;
             carryIn = (x & y) | (y & carryIn) | (x & carryIn);
