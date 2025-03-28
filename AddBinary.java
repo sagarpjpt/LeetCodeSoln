@@ -1,6 +1,5 @@
 /*
 Given two binary strings a and b, return their sum as a binary string.
-
 Example 1:
 
 Input: a = "11", b = "1"
@@ -21,15 +20,15 @@ class Solution {
         while(i >= 0  || j >= 0){
             if(i >= 0)  x = a.charAt(i) - '0'; else x = 0;
             if(j >= 0)  y = b.charAt(j) - '0'; else y = 0;
-            sum = x ^ y ^ carryIn;
+            sum = x ^ y ^ carryIn; // boolean fn for sum in full adder
             res += sum;
-            carryIn = (x & y) | (y & carryIn) | (x & carryIn);
+            carryIn = (x & y) | (y & carryIn) | (x & carryIn); // boolean fn for carry out in full adder
             i--;j--;
         }
         if(carryIn == 1)    res += carryIn;
         return new StringBuilder(res).reverse().toString();
 
-        // method 2 
+
         // StringBuilder result = new StringBuilder();
         // int i = a.length() - 1, j = b.length() - 1, carry = 0;
 
